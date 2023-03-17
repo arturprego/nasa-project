@@ -20,10 +20,10 @@ client = bigquery.Client()
 
 # Create schema in case it doesn't exist.
 try:
-    dataset = client.create_dataset('asteroids_dataset_v2')
+    dataset = client.create_dataset('nasa_asteroids')
 except:
-    dataset = client.dataset('asteroids_dataset_v2')
-table = dataset.table('asteroidsv2')
+    dataset = client.dataset('nasa_asteroids')
+table = dataset.table('asteroids_raw')
 
 job_config = bigquery.job.LoadJobConfig()
 
@@ -38,6 +38,8 @@ asteroids_df = pd.concat([asteroids_lib.process_asteroids(asteroids),asteroids_d
 #Limiting the process of urls to 2000, nasa query hourly limit
 i = 1
 total_pages = asteroids["page"]["total_pages"]
+print("total number of pages to process: " + str(total_pages))
+
 while i < total_pages and  i<1:
     try:
         url = asteroids["links"]["next"]
@@ -49,8 +51,9 @@ while i < total_pages and  i<1:
     except KeyError:
         print("no next found")
 
-# Define the dataframe columns
-asteroids_df.columns = asteroids_lib.column_definition()
+asteroids_lib.map_columns(asteroids_df,'asteroids_col_mapping.csv')
+print(asteroids_df.iloc[1])
+
 load_job = client.load_table_from_dataframe(asteroids_df, table, job_config=job_config).result()
 
 print('JSON file loaded to BigQuery')
