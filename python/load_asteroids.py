@@ -40,7 +40,7 @@ i = 1
 total_pages = asteroids["page"]["total_pages"]
 print("total number of pages to process: " + str(total_pages))
 
-while i < total_pages and  i<1:
+while i < total_pages and  i<2000:
     try:
         url = asteroids["links"]["next"]
         response = urllib.request.urlopen(url)
@@ -51,7 +51,7 @@ while i < total_pages and  i<1:
     except KeyError:
         print("no next found")
 
-asteroids_lib.map_columns(asteroids_df,'asteroids_col_mapping.csv')
+asteroids_lib.map_columns(asteroids_df,'../csv/asteroids_col_mapping.csv')
 print(asteroids_df.iloc[1])
 
 load_job = client.load_table_from_dataframe(asteroids_df, table, job_config=job_config).result()
