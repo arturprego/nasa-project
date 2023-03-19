@@ -7,6 +7,7 @@
 # https://ssd-api.jpl.nasa.gov/doc/cad.html
 
 #json sample of asteroid
+#added github desktop version
 
 {'links': 
 	{'self': 'http://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=xxxxxxxxxxxxxxx'},
