@@ -1,9 +1,3 @@
-{{
-  config(
-    materialized='table'
-  )
-}}
-
 select id,
     name,
     absolute_magnitude_h,
@@ -15,4 +9,4 @@ select id,
     aphelion_distance,
     orbit_class_type,
     is_sentry_object
-from {{ ref('stg_asteroids_raw') }}
+from {{ ref('stg_nasa__asteroids') }}

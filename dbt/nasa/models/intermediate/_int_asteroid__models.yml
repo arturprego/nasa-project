@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_asteroid_approaches
+    description: '{{ doc("int_asteroid_approaches") }}'
+    config:
+      materialized: table
+  - name: int_asteroids
+    description: '{{ doc("int_asteroids") }}'
+    config:
+      materialized: table
