@@ -1,10 +1,10 @@
-#Study of nasa asteroids data
+# Study of nasa asteroids data
 
 This project aims to provide a framework on how to derive data insights from nasa asteroids data.
 Extraction is done on python, transformation on dbt, using a bigquery database.
 It was created with the purpose of learning and making the best use possible of this technologies. So all feedback and suggestions are greatly appreciated.
 
-##Architecture
+## Architecture
 
 ![My Image](src/architecture.jpg)
 
