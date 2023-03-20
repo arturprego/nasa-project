@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: nasa_asteroids
+    database: mybigqueryproject-377815
+    schema: nasa_asteroids
+    tables:
+      - name: asteroids_raw      

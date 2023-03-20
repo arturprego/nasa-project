@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_nasa__asteroids_raw
+    config:
+      materialized: view
+  - name: stg_nasa__asteroids
+    config:
+      materialized: view
+  - name: stg_nasa__close_approaches
+    config:
+      materialized: view

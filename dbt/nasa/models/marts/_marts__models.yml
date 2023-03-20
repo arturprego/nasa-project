@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: asteroid_approaches__sum
+    description: '{{ doc("asteroid_approaches__sum") }}'
+    config:
+      materialized: table
