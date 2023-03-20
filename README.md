@@ -20,5 +20,9 @@ Python:
  - Proper logging
  
 dbt:
- - 
-
+ - Improved models and segmentations
+ - Proper testing and documentation
+ 
+ 
+Visualization
+ - To be added
